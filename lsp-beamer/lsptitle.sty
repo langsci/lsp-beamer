@@ -2,17 +2,17 @@
 
 { 
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{bg-is.png}}%
-  \frame[plain]{    
-	    \parbox[b]{.8\textwidth}{
+  \frame[plain]{     
 	      \vskip4em
-	    {\huge\inserttitle }  
+	    {\hspace{-.5em} % correct for too large indent of title
+	      \huge\inserttitle}
 	      \vskip2em	   
 	    \insertauthor
 	    \\ 
 	    \insertdate 
 	    \\ 
 	    \insertinstitute
-	    }
+	    
 	} 
 } 
 }
