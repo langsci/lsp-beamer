@@ -25,10 +25,15 @@
 \setbeamercolor{normal text}{fg=beamer@lspturquoise}  
 \setbeamercolor{item}{fg=beamer@lspturquoise} 
 \setbeamercolor{title}{fg=white}
+\setbeamercolor{title in title}{fg=white}
+\setbeamercolor{author in title}{fg=white}
+\setbeamercolor{date in title}{fg=white}
 
 \setbeamertemplate{itemize items}{{\bf\small\textrangle}}
 \setlength{\itemindent}{.1cm}
 \setbeamertemplate{navigation symbols}{}
+
+\setbeamersize{text margin left=0.7cm}
 
 %-----------
 
@@ -39,7 +44,7 @@
     \usebeamercolor{title in head/foot}
     \usebeamercolor{subsection in head/foot}
     \usebeamercolor{section in head/foot}
-    \usebeamercolor{frametitle}
+    \usebeamercolor{frametitle} 
 
     \pgfdeclareverticalshading{beamer@treeshade}{\the\paperwidth}{%
       color(0ex)=(normal text.bg);%
@@ -68,12 +73,13 @@
 {%
   \pgfuseshading{beamer@treeshade}%
   \vskip-7ex% 
-  \begin{tabular}{p{.28cm}p{2cm}p{5.5cm}p{4cm}}
+  \begin{tabular}{p{-0.1cm}p{2cm}p{5.55cm}p{4cm}}
    &
   \vspace{-.7cm}
-  \includegraphics[width=2cm, height=0.95cm]{logo-is.png} 
+  \hspace{-.22cm}
+  \includegraphics[width=2cm,height=1.1cm]{logo-gimp.png} 
   &
-  {\begin{raggedright}\large\insertframetitle\end{raggedright}}
+  \parbox{5cm}{\large \insertframetitle}
   &
   \parbox{2cm}{
 
@@ -81,7 +87,7 @@
 
     \begin{beamercolorbox}[wd=\paperwidth,ht=2.125ex,dp=1.125ex,ignorebg,%
       leftskip=.3cm,rightskip=.3cm plus1fil]{section in head/foot}
-      \usebeamerfont{title in head/foot}{\scriptsize $|$~\insertsectionhead}
+      \usebeamerfont{title in head/foot}{\raisebox{-.3em}[.2em]{\rule{.08em}{1.4em}}~\scriptsize\insertsectionhead}
     \end{beamercolorbox}
 
     \vspace{.05cm}
@@ -92,7 +98,7 @@
       \ifx\insertsubsectionhead\@empty%
         \strut\par%
       \else
-        \par{\hskip12pt{\scriptsize $|$~\insertsubsectionhead}\strut\par}% 
+        \par{\hskip12pt{\raisebox{-.3em}[.2em]{\rule{.08em}{1.4em}}~\scriptsize\insertsubsectionhead}\strut\par}% 
       \fi%%
     \end{beamercolorbox}
 
@@ -104,46 +110,20 @@
       \ifx\insertsubsubsectionhead\@empty%
         \strut\par%
       \else
-        \par{\hskip24pt{\scriptsize $|$~\insertsubsubsectionhead}\strut\par}% 
+        \par{\hskip24pt{\raisebox{-.3em}[.2em]{\rule{.08em}{1.4em}}~\scriptsize\insertsubsubsectionhead}\strut\par}% 
       \fi%%
     \end{beamercolorbox}
 
-    \vspace{.4cm}
+    \vspace{.1cm}
   }  
 \end{tabular}
-
-\hspace{.4cm}\includegraphics[width=.95\textwidth,height=.04cm]{colorbar.png} 
+% 
+\parbox{.2cm}{~} \includegraphics[width=.95\textwidth,height=.04cm]{colorbar.png} 
 }
-
-
-
+ 
 \defbeamertemplate*{frametitle}{lsp theme}
 {%
-  \nointerlineskip%
-  \usebeamerfont{headline}%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=6.5ex,dp=0ex]{empty}
-    \pgfuseshading{beamer@aboveframetitle}% 
-  \end{beamercolorbox}%
 
-  \vskip-.5ex%
-  \nointerlineskip%
-
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=.935cm,rightskip=.3cm plus1fil]{frametitle}
-%     \usebeamerfont*{frametitle}\insertframetitle%
-      \ifx\insertframesubtitle\@empty%
-        \strut\par%
-      \else
-        \par{\usebeamerfont*{framesubtitle}{\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}\strut\par}%
-      \fi%%
-    \usebeamerfont{headline}%
-    \vskip-12.5ex   
-  \end{beamercolorbox}%
-
-  \nointerlineskip 
-
-  \begin{beamercolorbox}[wd=\paperwidth,ht=.5ex,dp=0ex]{empty}
-    \pgfuseshading{beamer@belowframetitle}%
-  \end{beamercolorbox}%
 }
 
 \defbeamertemplate*{footline}{lsp theme}

@@ -4,15 +4,19 @@
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{bg-is.png}}%
   \frame[plain]{     
 	      \vskip4em
-	    {\hspace{-.5em} % correct for too large indent of title
-	      \huge\inserttitle}
-	      \vskip2em	   
-	    \insertauthor
-	    \\ 
-	    \insertdate 
-	    \\ 
-	    \insertinstitute
-	    
+	    \begin{beamercolorbox}{title}
+	      \hspace{0.4em}
+	      \parbox{.7\textwidth}{
+		{ \hspace{-0.1em}% correct for too large indent of title	      
+		  \huge\inserttitle}
+		  \vskip2em	   
+		\insertauthor
+		\\ 
+		\insertdate 
+		\\ 
+		\insertinstitute
+	      }
+	    \end{beamercolorbox}	    
 	} 
 } 
 }
